@@ -4,19 +4,15 @@ import information.FormDeed;
 import information.FormPeople;
 
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class Homepage extends JFrame {
     JDesktopPane desktop;
 
     public static void main(String[] args) {
-        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
-                "Leelawadee", Font.PLAIN, 12)));
+        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
+        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
         new Homepage().setVisible(true);
     }
 
@@ -67,7 +63,16 @@ public class Homepage extends JFrame {
                 layeredPane.add(cal, new Integer(3));
             }
         });
-    }
 
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                login l = new login();
+                l.setVisible(true);
+                layeredPane.add(l, new Integer(3));
+            }
+        });
+
+    }
 
 }

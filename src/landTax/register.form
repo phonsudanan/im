@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="landTax.register">
-  <grid id="27dc6" layout-manager="GridBagLayout">
+  <grid id="27dc6" binding="regis" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="209" y="20" width="697" height="385"/>
+      <xy x="209" y="20" width="743" height="442"/>
     </constraints>
     <properties>
       <font name="Leelawadee" size="16"/>
@@ -11,57 +11,62 @@
     <children>
       <component id="f713d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="0.0"/>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font size="14"/>
           <text value="User Name"/>
         </properties>
       </component>
-      <component id="97d85" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="97d85" class="javax.swing.JTextField" binding="user">
         <constraints>
-          <grid row="1" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Leelawadee" size="20"/>
+        </properties>
       </component>
       <component id="cde04" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font size="14"/>
           <text value="Password"/>
         </properties>
       </component>
-      <component id="3257" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
+      <component id="3257" class="javax.swing.JPasswordField" binding="pass">
         <constraints>
-          <grid row="2" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
         <properties>
+          <font name="Leelawadee" size="20"/>
           <text value=""/>
         </properties>
       </component>
-      <component id="227fc" class="javax.swing.JPasswordField" binding="passwordField2" default-binding="true">
+      <component id="227fc" class="javax.swing.JPasswordField" binding="CFpass">
         <constraints>
-          <grid row="3" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Leelawadee" size="20"/>
+        </properties>
       </component>
       <component id="b41cf" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font size="14"/>
@@ -70,36 +75,40 @@
       </component>
       <component id="4092d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font name="Leelawadee" size="16"/>
           <text value="ชื่่อ"/>
         </properties>
       </component>
-      <component id="2ba74" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="2ba74" class="javax.swing.JTextField" binding="name">
         <constraints>
-          <grid row="4" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Leelawadee" size="20"/>
+        </properties>
       </component>
-      <component id="f3e3" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="f3e3" class="javax.swing.JTextField" binding="address">
         <constraints>
-          <grid row="5" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="5" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Leelawadee" size="20"/>
+        </properties>
       </component>
       <component id="348e3" class="javax.swing.JLabel">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="5" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font name="Leelawadee" size="16"/>
@@ -108,26 +117,28 @@
       </component>
       <component id="3f7da" class="javax.swing.JLabel">
         <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <font name="Leelawadee" size="16"/>
           <text value="เบอร์ติดต่อ"/>
         </properties>
       </component>
-      <component id="219ea" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="219ea" class="javax.swing.JTextField" binding="phone">
         <constraints>
-          <grid row="6" column="3" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="6" column="5" row-span="1" col-span="10" vsize-policy="0" hsize-policy="6" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
-          <gridbag top="0" left="0" bottom="10" right="0" weightx="0.0" weighty="0.0"/>
+          <gridbag top="0" left="0" bottom="10" right="0" weightx="3.0" weighty="1.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Leelawadee" size="20"/>
+        </properties>
       </component>
       <grid id="1f65c" layout-manager="GridBagLayout">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="13" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="14" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties/>
@@ -135,20 +146,26 @@
         <children>
           <component id="be7ad" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
               <gridbag top="20" left="20" bottom="20" right="20" weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <font name="Leelawadee" size="20" style="1"/>
+              <font name="Leelawadee" size="26" style="1"/>
               <text value="ลงทะเบียน"/>
             </properties>
           </component>
+          <vspacer id="13c59">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="1.0"/>
+            </constraints>
+          </vspacer>
         </children>
       </grid>
       <component id="5532f" class="javax.swing.JButton" binding="OKButton" default-binding="true">
         <constraints>
-          <grid row="7" column="12" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="7" column="14" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <text value="OK"/>
@@ -156,13 +173,37 @@
       </component>
       <component id="7ddc9" class="javax.swing.JButton" binding="cancelButton" default-binding="true">
         <constraints>
-          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+          <grid row="7" column="5" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="1.0"/>
         </constraints>
         <properties>
           <text value="Cancel"/>
         </properties>
       </component>
+      <vspacer id="536d2">
+        <constraints>
+          <grid row="8" column="9" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="1.0"/>
+        </constraints>
+      </vspacer>
+      <hspacer id="ce73f">
+        <constraints>
+          <grid row="2" column="15" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="b6bd1">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="9f4d4">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.3" weighty="0.0"/>
+        </constraints>
+      </hspacer>
     </children>
   </grid>
 </form>

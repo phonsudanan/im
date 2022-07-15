@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 
 public class Calculator extends JInternalFrame {
     private Connection con = Connect.ConnectDB();
@@ -52,7 +53,9 @@ public class Calculator extends JInternalFrame {
         FormPeople p = new FormPeople();
         if( !p.isInt(a) || !p.isInt(b) || a.equals("") || b.equals("")) {
             JOptionPane.showMessageDialog(this, "กรุณาใส่เฉพาะตัวเลข","ERROR",JOptionPane.ERROR_MESSAGE);
-        }else {
+        } else if (status.getSelectedIndex()==0) {
+            JOptionPane.showMessageDialog(this, "กรุณาเลือกลักษณะที่ดิน","ERROR",JOptionPane.ERROR_MESSAGE);
+        } else {
             double area = Integer.parseInt(a);
             double price = Integer.parseInt(b);
             double count = area * price;
@@ -69,7 +72,7 @@ public class Calculator extends JInternalFrame {
                            while (rs.next()) {
                                if (count >= rs.getDouble("price")) {
                                    taxB = count * rs.getDouble("tax");
-                                   taxBaht.setText(String.valueOf(taxB) + "\t บาท");
+                                   taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
                                    break;
                                }
                            }
@@ -86,7 +89,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(taxB) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
                                break;
                            }
                        }
@@ -103,7 +106,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(taxB) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
                                break;
                            }
                        }
@@ -120,7 +123,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(taxB) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
                                break;
                            }
                        }
@@ -149,6 +152,12 @@ public class Calculator extends JInternalFrame {
             e.printStackTrace();
         }
 
+    }
+
+    public String format(double a){
+        double n = Math.round(a);
+        DecimalFormat dF = new DecimalFormat("#,###.00");
+        return dF.format(n);
     }
 
 }
