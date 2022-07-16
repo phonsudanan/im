@@ -10,11 +10,11 @@ import java.awt.event.*;
 public class Homepage extends JFrame {
     JDesktopPane desktop;
 
-    public static void main(String[] args) {
-        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
-        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
-        new Homepage().setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
+//        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
+//        new Homepage().setVisible(true);
+//    }
 
 
     private JPanel home;
@@ -23,8 +23,16 @@ public class Homepage extends JFrame {
     private JButton People;
     private JButton land;
     private JButton logOutButton;
+    private JLabel user_name;
+
+    void getName(String n){
+        user_name.setText("สวัสดี \t"+n);
+    }
 
     public Homepage() {
+        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
+        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
+
         setTitle("Homepage");
         setSize(1000,600);
         setContentPane(home);
@@ -64,15 +72,31 @@ public class Homepage extends JFrame {
             }
         });
 
-        this.addWindowListener(new WindowAdapter() {
+//        this.addWindowListener(new WindowAdapter() {
+//            @Override
+//            public void windowOpened(WindowEvent e) {
+//                login l = new login();
+//                l.setVisible(true);
+//                layeredPane.add(l, new Integer(3));
+//            }
+//        });
+
+        logOutButton.addMouseListener(new MouseAdapter() {
             @Override
-            public void windowOpened(WindowEvent e) {
-                login l = new login();
-                l.setVisible(true);
-                layeredPane.add(l, new Integer(3));
+            public void mouseClicked(MouseEvent e) {
+                int confirm = JOptionPane.showConfirmDialog
+                        (null,"คุณต้องการออกจากระบบ","",JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION){
+                    System.exit(0);
+                }
             }
         });
 
+
+
+
+
     }
+
 
 }

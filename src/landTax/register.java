@@ -22,9 +22,9 @@ public class register extends JFrame {
     private JPanel regis;
     private JTextField name;
 
-    public static void main(String[] args) {
-       new register().setVisible(true);
-    }
+//    public static void main(String[] args) {
+//       new register().setVisible(true);
+//    }
 
     public register(){
         UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
@@ -57,23 +57,46 @@ public class register extends JFrame {
 
         String a = new String(pass.getPassword());
         String b = new String(CFpass.getPassword());
+        String u = user.getText().trim();
+        int i = 0;
+        try {
+            String sql = "SELECT username FROM login";
+            pre = con.prepareStatement(sql);
+            rs = pre.executeQuery(sql);
+            while (rs.next()){
+                if (u.equals(rs.getString("username"))){
+               i++;
+                }
+            }
 
-        if ( a.equals(b) ){
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
+        if ( !a.equals(b) ){
+            JOptionPane.showMessageDialog
+                    (this,"คุณใส่รหัสผ่านไม่ตรงกัน","ERROR",JOptionPane.ERROR_MESSAGE);
+        } else if ( user.getText().trim().equals("") || a.equals("") || b.equals("") || name.getText().trim().equals("") || address.getText().trim().equals("") || phone.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog
+                    (this,"คุณใส่ค่าว่างไม่ได้","ERROR",JOptionPane.ERROR_MESSAGE);
+        } else if (i>0) {
+            JOptionPane.showMessageDialog
+                    (this,"Username นี้ ถูกใช้ไปแล้ว","ERROR",JOptionPane.ERROR_MESSAGE);
+        } else {
             try {
                 String sql = "INSERT INTO login (no, username, password, name, address, phone)"
                                 + "Values(?,?,?,?,?,?)";
                 pre = con.prepareStatement(sql);
                 pre.setString(1,null);
                 pre.setString(2, user.getText());
-                pre.setString(3, new String(pass.getPassword()));
+                pre.setString(3, new String(CFpass.getPassword()));
                 pre.setString(4, name.getText());
                 pre.setString(5, address.getText());
                 pre.setString(6, phone.getText());
 
                 if (pre.executeUpdate() != -1) {
                     JOptionPane.showMessageDialog
-                            (this, "ยินดีต้อนรับ", "WELCOME", JOptionPane.INFORMATION_MESSAGE);
+                            (this, "เข้าระบบอีกครั้ง", "WELCOME", JOptionPane.INFORMATION_MESSAGE);
                     login l = new login();
                     this.setVisible(false);
                     l.setVisible(true);
@@ -81,9 +104,6 @@ public class register extends JFrame {
             }catch (Exception e){
                 e.printStackTrace();
             }
-        }else {
-            JOptionPane.showMessageDialog
-                    (this,"คุณใส่รหัสผ่านไม่ตรงกัน","ERROR",JOptionPane.ERROR_MESSAGE);
         }
 
     }
