@@ -72,7 +72,7 @@ public class Calculator extends JInternalFrame {
                            while (rs.next()) {
                                if (count >= rs.getDouble("price")) {
                                    taxB = count * rs.getDouble("tax");
-                                   taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
+                                   taxBaht.setText(String.valueOf(format(taxB)));
                                    break;
                                }
                            }
@@ -89,7 +89,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)));
                                break;
                            }
                        }
@@ -106,7 +106,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)) );
                                break;
                            }
                        }
@@ -123,7 +123,7 @@ public class Calculator extends JInternalFrame {
                        while (rs.next()) {
                            if (count >= rs.getDouble("price")) {
                                taxB = count * rs.getDouble("tax");
-                               taxBaht.setText(String.valueOf(format(taxB)) + "\t บาท");
+                               taxBaht.setText(String.valueOf(format(taxB)));
                                break;
                            }
                        }
@@ -154,10 +154,14 @@ public class Calculator extends JInternalFrame {
 
     }
 
-    public String format(double a){
+    public String format(double a) {
         double n = Math.round(a);
-        DecimalFormat dF = new DecimalFormat("#,###.00");
-        return dF.format(n);
+        if (a <= 0) {
+            return "ไม่เสียภาษี";
+        } else {
+            DecimalFormat dF = new DecimalFormat("#,###.00");
+            return dF.format(n) + "\t บาท";
+        }
     }
 
 }
