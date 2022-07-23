@@ -35,6 +35,7 @@ public class FormPeople extends JInternalFrame {
         setSize(900, 550);
         setContentPane(homePeople);
 
+
         initComponents();
 
         modelPeople = (DefaultTableModel) tablePeople.getModel();
@@ -52,6 +53,16 @@ public class FormPeople extends JInternalFrame {
 //});
 
 
+        view.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Tax t = new Tax();
+                t.number.setText(peopleNo.getText());
+                t.n.setText(peopleName.getText());
+                t.address.setText(address.getText());
+                t.setVisible(true);
+            }
+        });
     }
     private void showData(){
         try{
@@ -67,7 +78,7 @@ public class FormPeople extends JInternalFrame {
                     + " OR full_name LIKE ('%" + search + "%')"
                     + " OR address LIKE ('%" + search + "%')"
                     + " OR phone LIKE ('%" + search + "%')";
-pre = con.prepareStatement(sql);
+            pre = con.prepareStatement(sql);
             rs = con.createStatement().executeQuery(sql);
 
             int row = 0;
@@ -285,10 +296,10 @@ pre = con.prepareStatement(sql);
     }
 
 
-    private JTextField peopleNo;
+    JTextField peopleNo;
     private JTextField seachPeople;
-    private JTextField peopleName;
-    private JTextField address;
+    JTextField peopleName;
+    JTextField address;
     private JTextField phone;
     private JTable tablePeople;
     private JButton pDelete;
@@ -297,6 +308,7 @@ pre = con.prepareStatement(sql);
     private JPanel homePeople;
     private JScrollPane scrollbar;
     private JButton pSave;
+    private JButton view;
     private JScrollBar scrollBar;
 
 
