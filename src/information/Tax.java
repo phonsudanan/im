@@ -61,6 +61,8 @@ public class Tax extends JFrame {
                 }));
         sco.setViewportView(table);
         table.getTableHeader().setFont(new Font("Leelawadee", Font.BOLD, 14));
+        table.setRowHeight(25);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
 
     public void taxTable() {
@@ -84,8 +86,8 @@ public class Tax extends JFrame {
                 taxModel.addRow(new Object[0]);
                 taxModel.setValueAt(rs.getString("title_deed_no"), row, 0);
                 taxModel.setValueAt(rs.getString("land_location"), row, 1);
-                taxModel.setValueAt(rs.getDouble("area_of_land"), row, 2);
-                taxModel.setValueAt(rs.getDouble("price_of_square_wa"), row, 3);
+                taxModel.setValueAt(NumberFormat.format(rs.getDouble("area_of_land")), row, 2);
+                taxModel.setValueAt(NumberFormat.format(rs.getDouble("price_of_square_wa")), row, 3);
                 taxModel.setValueAt(rs.getString("name"), row, 4);
                 myList1.add(row, rs.getDouble("ta"));
                 myList2.add(row, rs.getString("t.status_no"));
@@ -102,9 +104,10 @@ public class Tax extends JFrame {
             for (int i = 0; i < myList1.size(); i++) {
                 t[i] = calculate(target1[i], target2[i]);
                 moneyBath += t[i];
-                taxModel.setValueAt(t[i], i, 5);
+                taxModel.setValueAt(NumberFormat.format(t[i]), i, 5);
             }
-            bath.setText(moneyBath+"");
+
+            bath.setText(NumberFormat.format(moneyBath));
             table.setModel(taxModel);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -181,6 +184,7 @@ public class Tax extends JFrame {
         }
         return taxB;
     }
+
 
 
 }

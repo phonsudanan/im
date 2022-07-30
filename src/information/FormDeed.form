@@ -180,7 +180,10 @@
               <component id="bd70a" class="javax.swing.JTable" binding="tableDeed">
                 <constraints/>
                 <properties>
+                  <fillsViewportHeight value="true"/>
                   <font name="Leelawadee" size="14"/>
+                  <preferredScrollableViewportSize width="600" height="500"/>
+                  <showHorizontalLines value="false"/>
                 </properties>
               </component>
             </children>

@@ -6,6 +6,8 @@ import javax.swing.*;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -23,7 +25,7 @@ public  class FormDeed extends JInternalFrame {
     private DefaultTableModel modelDeed;
     public FormDeed() {
         setTitle("DEED");
-        setSize(900, 550);
+        setSize(950, 550);
         setContentPane(homeDeed);
         setClosable(true);
         setMaximizable(true);
@@ -72,8 +74,8 @@ this.addInternalFrameListener(new InternalFrameAdapter() {
                 modelDeed.addRow(new Object[0]);
                 modelDeed.setValueAt(rs.getString("title_deed_no"), row, 0);
                 modelDeed.setValueAt(rs.getString("land_location"), row, 1);
-                modelDeed.setValueAt(rs.getString("area_of_land"), row, 2);
-                modelDeed.setValueAt(rs.getString("price_of_square_wa"), row, 3);
+                modelDeed.setValueAt(NumberFormat.format(rs.getDouble("area_of_land")), row, 2);
+                modelDeed.setValueAt(NumberFormat.format(rs.getDouble("price_of_square_wa")), row, 3);
                 modelDeed.setValueAt(rs.getString("identification"), row, 4);
                 modelDeed.setValueAt(rs.getString("status_no"), row, 5);
                 row++;
@@ -143,7 +145,12 @@ this.addInternalFrameListener(new InternalFrameAdapter() {
                         "เลขที่โฉนด", "ตำแหน่งที่ดิน", "เนื้อที่ (ตร.ม.)", "ราคา/ตร.ม.", "ผู้ถือโฉนด", "ประเภทที่ดิน"
                 }));
         tableDeed.getTableHeader().setFont(new Font("Leelawadee", Font.BOLD, 14));
-        tableDeed.setRowHeight(15);
+        tableDeed.setRowHeight(20);
+        tableDeed.setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
+        TableColumnModel col = tableDeed.getColumnModel();
+        TableColumn tc = col.getColumn(4);
+        tc.setPreferredWidth(110);
+
         scrollbar.setViewportView(tableDeed);
         tableDeed.addMouseListener(new MouseAdapter() {
             @Override

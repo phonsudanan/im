@@ -32,7 +32,7 @@ public class FormPeople extends JInternalFrame {
 //    }
     public FormPeople() {
         super("PEOPLE", false, true, true, false);
-        setSize(900, 550);
+        setSize(950, 550);
         setContentPane(homePeople);
 
 
@@ -131,7 +131,8 @@ public class FormPeople extends JInternalFrame {
                         "เลขที่ผู้เสียภาษี", "ชื่อ", "ที่อยู่", "เบอร์ติดต่อ"
                 }));
         tablePeople.getTableHeader().setFont(new Font("Leelawadee", Font.BOLD, 14));
-        tablePeople.setRowHeight(15);
+        tablePeople.setRowHeight(25);
+//        tablePeople.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         scrollbar.setViewportView(tablePeople);
 
         tablePeople.addMouseListener(new MouseAdapter() {

@@ -13,11 +13,11 @@ import java.awt.event.MouseEvent;
 public class Homepage extends JFrame {
     JDesktopPane desktop;
 
-    public static void main(String[] args) {
-        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
-        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
-        new Homepage().setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        UIManager.put("OptionPane.messageFont", new Font("Leelawadee", Font.PLAIN, 12));
+//        UIManager.put("InternalFrame.titleFont", new Font("Leelawadee", Font.PLAIN, 12));
+//        new Homepage().setVisible(true);
+//    }
 
     private JPanel home;
     private JPanel north;

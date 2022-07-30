@@ -24,7 +24,7 @@ public class Calculator extends JInternalFrame {
     private JLabel taxBaht;
     public Calculator(){
         super("TAX", false, true, true, false);
-        setSize(900,550);
+        setSize(950,550);
         setContentPane(cal);
 
         initComponents();
